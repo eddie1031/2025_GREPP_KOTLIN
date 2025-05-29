@@ -37,17 +37,6 @@ class EfCoffeeOrder(var type: String, var size: String) {
     }
 }
 
-interface A {
-    fun printName() {
-
-    }
-}
-
-class C : A {
-    override fun printName() {}
-}
-
-
 
 
 
