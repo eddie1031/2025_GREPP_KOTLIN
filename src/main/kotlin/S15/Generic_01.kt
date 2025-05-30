@@ -9,10 +9,12 @@ fun main() {
     geFunc2(1)
 
     geFunc3(300)
-    geFunc3("300")
+//    geFunc3("300")
 
     val con1 = Container("A")
 
+    con1.printNAndGetValue<Int>(10)
+    con1.printNAndGetValue(.0)
 
 }
 
@@ -36,6 +38,14 @@ class Container<T>(val value: T?) {
 
     fun get(): T? {
         return if (value != null) value else throw NoSuchElementException()
+    }
+
+    fun <N> printNAndGetValue(param: N) : T? {
+        val result = get()
+        println("파라미터 값 : $param")
+        println("파라미터 타입 : ${param!!.javaClass.simpleName}")
+        println("result 타입 : ${result!!.javaClass.simpleName}")
+        return result
     }
 
 }
